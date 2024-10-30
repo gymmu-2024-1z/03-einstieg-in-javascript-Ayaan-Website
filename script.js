@@ -62,7 +62,7 @@ export function aufgabe03(args) {
   const input = args
   const result = []
 
-  let i = 0
+  let count = 0
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (currentElement === "e") {
@@ -71,4 +71,62 @@ export function aufgabe03(args) {
   }
   return count
 }
-linkupExerciseHandler("[data-click=aufgabe3]", aufgabe03)
+linkupExerciseHandler("[data-click=aufgabe03]", aufgabe03)
+
+export function aufgabe05(args) {
+  const input = args
+  const result = []
+
+  let hasUpperCaseLetter = false
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    const upperCaseLetter = currentElement.toUpperCase()
+    if (currentElement === " ") {
+    } else if (currentElement === ".") {
+    } else if (currentElement === upperCaseLetter) {
+      hasUpperCaseLetter = true
+    }
+  }
+  return hasUpperCaseLetter
+}
+linkupExerciseHandler("[data-click=aufgabe05]", aufgabe05)
+
+export function aufgabe06(args) {
+  const input = args
+  const result = []
+
+  let istSonderzeichen = false
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    const upperCaseLetter = currentElement.toUpperCase()
+
+    const lowerCase = currentElement.toUpperCase()
+
+    if (lowerCase === upperCaseLetter) {
+      istSonderzeichen = true
+    }
+  }
+  return istSonderzeichen
+}
+linkupExerciseHandler("[data-click=aufgabe06]", aufgabe06)
+
+export function aufgabe07(args) {
+  const input = args
+  const result = []
+
+  let istund = false
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === "u" || currentElement === "U") {
+      const nextElement = input[i + 1]
+       if (nextElement === "n")
+        const lastElement = input[i + 2]
+          if (lastElement === "d") {
+            istund = true
+          }
+    }
+  }
+}
