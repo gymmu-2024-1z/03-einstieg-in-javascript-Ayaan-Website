@@ -122,11 +122,48 @@ export function aufgabe07(args) {
     const currentElement = input[i]
     if (currentElement === "u" || currentElement === "U") {
       const nextElement = input[i + 1]
-       if (nextElement === "n")
+      if (nextElement === "n") {
         const lastElement = input[i + 2]
-          if (lastElement === "d") {
-            istund = true
-          }
+        if (lastElement === "d") {
+          istund = true
+        }
+      }
     }
   }
 }
+linkupExerciseHandler("[data-click=aufgabe07]", aufgabe07)
+
+export function aufgabe08(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    // Wenn du ein e entdeckst dann schreib eine 3
+    if (currentElement === "e" || currentElement === "E") {
+      result.push("3")
+    } else {
+      result.push(currentElement)
+    }
+  }
+
+  // schreibe eine funktion, die alle e's in input ersetzt durch 3
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe08]", aufgabe08)
+
+export function aufgabe09(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    // teste ob eine eingabe genau 6 zeichen lang ist
+    if (input.length === 6) {
+      return true
+    } else {
+      return false
+    }
+  }
+}
+linkupExerciseHandler("[data-click=aufgabe09]", aufgabe09)
