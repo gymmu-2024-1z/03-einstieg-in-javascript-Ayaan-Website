@@ -140,10 +140,10 @@ export function aufgabe08(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     // Wenn du ein e entdeckst dann schreib eine 3
-    if (currentElement === "e" || currentElement === "E") {
-      result.push("3")
+    if (currentElement === "e" || input === "E") {
+      return i
     } else {
-      result.push(currentElement)
+      return -1
     }
   }
 
@@ -167,3 +167,72 @@ export function aufgabe09(args) {
   }
 }
 linkupExerciseHandler("[data-click=aufgabe09]", aufgabe09)
+
+export function aufgabe10(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    // Teste ob die Eingabe ein korrekter RGB Hexcode ist
+    if (input[i] === "#") {
+      return true
+    } else {
+      return false
+    }
+  }
+}
+linkupExerciseHandler("[data-click=aufgabe10]", aufgabe10)
+
+export function aufgabe12(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    // Suche die Position des ersten es in einem Text.
+    if (input[i] === "e" || input[i] === "E") {
+      return i
+    } else {
+      return -1
+    }
+  }
+}
+linkupExerciseHandler("[data-click=aufgabe12]", aufgabe12)
+
+export function aufgabe13(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    // Suche die Position des letzten es in einem Text.
+    if (input[i] === "e") {
+      return i
+    } else {
+      return -1
+    }
+    if (input[i] === "e" || input[i] === "E") {
+      return i
+    } else {
+      return -1
+    }
+  }
+}
+linkupExerciseHandler("[data-click=aufgabe13]", aufgabe13)
+
+export function aufgabe14(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    // Suche die Position des dritten es in einem Text.
+    if (input[i] === "e") {
+      return i
+    } else {
+      return -1
+    }
+    if (input[i] === "e" || input[i] === "E") {
+      return i
+    } else {
+      return -1
+    }
+  }
+}
