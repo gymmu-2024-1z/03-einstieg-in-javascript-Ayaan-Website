@@ -219,20 +219,78 @@ export function aufgabe13(args) {
 linkupExerciseHandler("[data-click=aufgabe13]", aufgabe13)
 
 export function aufgabe14(args) {
+  let pos = -1
+  let eCount = 0
+
+  for (let i = 0; i < args.length; i++) {
+    const currentElement = input[i]
+
+    // Wenn du ein e siehst dann zähle eins hoch.
+    if (currentElement === "e") {
+      eCount = eCount + 1
+    }
+
+    // Wenn eCount genau gleich 3 ist, dann speichere die Position.
+    if (eCount === 3) {
+      pos = i
+    }
+  }
+
+  return pos
+}
+linkupExerciseHandler("[data-click=aufgabe14]", aufgabe14)
+
+export function aufgabe15(args) {
+  let pos = -1
+  let eCount = 0
+
+  for (let i = 0; i < args.length; i++) {
+    const currentElement = input[i]
+
+    // Lese die Eingabe nur bis zum ersten Leerzeichen ein.
+    if (currentElement === " ") {
+      break // Die Schleife wird beendet.
+    }
+  }
+  return pos
+}
+linkupExerciseHandler("[data-click=aufgabe15]", aufgabe15)
+
+export function aufgabe16(args) {
+  const input = args
+  const result = []
+
+  // erstelle eine Variable um zwei Teile einer Liste zu speichern.
+  let firstPart = []
+  let secondPart = []
+  let dollarfound = false
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+
+    // Wenn kein Dollarzeichen gefunden wurde, dann hänge an de ersten Teil an
+    if (!dollarfound === false) {
+      firstPart.push(currentElement)
+    } else {
+      secondPart.push(currentElement)
+    }
+
+    //Wenn du ein Dollarzeichen findest
+    if (currentElement === "$") {
+      // setze dollarfound auf true
+      dollarfound = true
+    }
+  }
+  // Gib das Resultat zurück.
+  return [firstPart.join(""), secondPart.join("")]
+}
+linkupExerciseHandler("[data-click=aufgabe16]", aufgabe16)
+
+export function aufgabe18(args) {
   const input = args
   const result = []
 
   for (let i = 0; i < input.length; i++) {
-    // Suche die Position des dritten es in einem Text.
-    if (input[i] === "e") {
-      return i
-    } else {
-      return -1
-    }
-    if (input[i] === "e" || input[i] === "E") {
-      return i
-    } else {
-      return -1
-    }
-  }
-}
+    const currentElement = input[i]
+
+    //
