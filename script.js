@@ -286,11 +286,48 @@ export function aufgabe16(args) {
 }
 linkupExerciseHandler("[data-click=aufgabe16]", aufgabe16)
 
-export function aufgabe18(args) {
+export function aufgabe19(args) {
+  const input = args
+  const result = []
+  //wenn du ein Zeichen findest
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    //wenn du ein Buchstaben findest
+    if (currentElement >= "a" && currentElement <= "z") {
+    } //dann verdopple es
+    result.push(currentElement + currentElement)
+  }
+
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe19]", aufgabe19)
+
+export function aufgabe20(args) {
   const input = args
   const result = []
 
   for (let i = 0; i < input.length; i++) {
+    //wenn du ein Punkt findest
     const currentElement = input[i]
+    if (currentElement === ".") {
+      //dann teste ob du ein Lehrschlag dahinter findest
+      const nextElement = input[i]
+      if (nextElement === " ") {
+        //dann gebe ich true zurueck
+      } else {
+        //wenn nicht gebe false zurueck
+        return false
+      }
+    }
+  }
+  return true
+}
+linkupExerciseHandler("[data-click=aufgabe20]", aufgabe20)
 
-    //
+export function aufgabe21(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+
+linkupExerciseHandler("[data-click=aufgabe21]", aufgabe21)
