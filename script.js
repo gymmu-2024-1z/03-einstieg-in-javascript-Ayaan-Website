@@ -431,4 +431,46 @@ export function aufgabe21(args) {
 
 linkupExerciseHandler("[data-click=aufgabe21]", aufgabe21)
 
-export function aufgabe27(args) {}
+export function aufgabe27(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    //Wir benutzen den sogenannten ASCII-Wert.
+    const ascii = currentElement.charCodeAt(0)
+
+    if (ascii >= 48 && ascii <= 57) {
+      //Man gibt hier den ASCII-Wert von zahlen ein, damti sie erkennt werden zum dann true zu sein.
+      return true
+      // hier wird eben eine Zahl als true gelten
+    } else {
+      return false
+    }
+  }
+}
+linkupExerciseHandler("[data-click=aufgabe27]", aufgabe27)
+
+export function karlosso(args) {
+  const input = "Hausaufgaben"
+  const result1 = []
+  const result2 = []
+
+  const middleIndex = Math.floor(input.length / 2)
+
+  for (let i = 0; i < input.length; i++) {
+    // Wenn vor dem zeichen der Hälfte des Wortes
+    const currentElement = input[i]
+    //dabei der Input des result 1 kleiner ist
+    if (i < middleIndex) {
+      // trenne es in die zwei Hälften.
+      result1.push(currentElement)
+    } else {
+      result2.push(currentElement)
+    }
+  }
+  //gib noch das resultat zurück.
+  return [result1.join(""), result2.join("")]
+}
+
+linkupExerciseHandler("[data-click=karlosso]", karlosso)
