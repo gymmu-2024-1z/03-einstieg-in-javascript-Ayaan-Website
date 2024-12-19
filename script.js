@@ -219,35 +219,35 @@ export function aufgabe08(args) {
 linkupExerciseHandler("[data-click=aufgabe08]", aufgabe08)
 
 export function aufgabe09(args) {
-  //wir speichern den Wert von args in der Variable "input" ein
-
+  // Die Eingabe wird als 'input' gespeichert.
   const input = args
-  //Jetzt erstellen wir die leere Liste.
 
+  // Es wird ein leeres Array für das Resultat erstellt.
   const result = []
-  //Die Funktion in der Schlaufe wird gemacht.
 
-  let count = 0
-
+  // Schleife durch jedes Element in der Eingabe
   for (let i = 0; i < input.length; i++) {
-    //Wir zeigen das jetzt Input der Funktion an
-
     const currentElement = input[i]
-    //Hier wird das Zeichen an der Stelle "i" gespeichert
 
-    count = count + 1
+    // Wenn das aktuelle Element ein "x" ist, überspringen wir es.
+    if (currentElement === "x") {
+      continue
+    }
 
-    if (input.length === 6) {
-      // Wir sagen das es testen soll ob eine eingabe genau 6 zeichen lang ist
-
-      return true
-      //Die Funktion wird als korrekt abgeschlossen, dass die Eingabe genau 6 Zeichen lang ist udn dies erkennt werden soll.
+    // Wenn das aktuelle Element ein "X" ist, wird es hinzugefügt.
+    if (currentElement === "X") {
+      result.push(currentElement)
     } else {
-      return false
-      //Wenn nicht, dann geben wir false zurück.
+      // Alle anderen Zeichen werden ebenfalls hinzugefügt.
+      result.push(currentElement)
     }
   }
+
+  // Das Resultat wird als String zurückgegeben.
+  return result.join("")
 }
+
+// Die Funktion mit dem Klick-Handler verbinden
 linkupExerciseHandler("[data-click=aufgabe09]", aufgabe09)
 
 export function aufgabe10(args) {
