@@ -361,32 +361,35 @@ linkupExerciseHandler("[data-click=aufgabe15]", aufgabe15)
 
 export function aufgabe16(args) {
   const input = args
-  const result = []
 
-  // erstelle eine Variable um zwei Teile einer Liste zu speichern.
+  // Erstellt zwei leere Listen für die beiden Teile
   let firstPart = []
   let secondPart = []
   let dollarfound = false
 
+  // Durchlaufe die Eingabezeichenkette
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
 
-    // Wenn kein Dollarzeichen gefunden wurde, dann hänge an de ersten Teil an
-    if (!dollarfound === false) {
+    // Wenn noch kein Dollarzeichen gefunden wurde, füge das Zeichen der ersten Liste hinzu
+    if (!dollarfound) {
       firstPart.push(currentElement)
     } else {
+      // Wenn Dollarzeichen gefunden, füge das Zeichen der zweiten Liste hinzu
       secondPart.push(currentElement)
     }
 
-    //Wenn du ein Dollarzeichen findest
+    // Wenn ein Dollarzeichen gefunden wird, setze dollarfound auf true
     if (currentElement === "$") {
-      // setze dollarfound auf true
       dollarfound = true
     }
   }
-  // Gib das Resultat zurück.
+
+  // Gib das Ergebnis als zwei Teile zurück, die durch das Dollarzeichen geteilt wurden
   return [firstPart.join(""), secondPart.join("")]
 }
+
+// Die Funktion mit dem Klick-Handler verbinden
 linkupExerciseHandler("[data-click=aufgabe16]", aufgabe16)
 
 export function aufgabe19(args) {
@@ -440,6 +443,33 @@ export function aufgabe21(args) {
 }
 
 linkupExerciseHandler("[data-click=aufgabe21]", aufgabe21)
+
+export function aufgabe22(args) {
+  const input = args // Die Eingabe speichern
+  let result = [] // Ein Array für das Ergebnis
+
+  // Durch die Eingabe iterieren
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+
+    // Wenn das aktuelle Zeichen ein 'k' ist, breche die Schleife ab
+    if (currentElement === "k") {
+      result.push(currentElement) // 'k' bleibt unverändert
+      break
+    } else {
+      result.push("_") // Alle Zeichen vor dem ersten 'k' werden durch '_' ersetzt
+    }
+  }
+
+  // Füge den Rest der Eingabe nach dem ersten 'k' zum Ergebnis hinzu
+  result.push(input.slice(result.length).join(""))
+
+  // Gib das Ergebnis zurück
+  return result.join("")
+}
+
+// Die Funktion mit dem Klick-Handler verbinden
+linkupExerciseHandler("[data-click=aufgabe22]", aufgabe22)
 
 export function aufgabe27(args) {
   const input = args
