@@ -395,80 +395,78 @@ linkupExerciseHandler("[data-click=aufgabe16]", aufgabe16)
 export function aufgabe19(args) {
   const input = args
   const result = []
-  //wenn du ein Zeichen findest
+
+  // Schleife durch alle Zeichen der Eingabe
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    //wenn du ein Buchstaben findest
+
+    // Prüfen, ob das aktuelle Zeichen ein Kleinbuchstabe ist
     if (currentElement >= "a" && currentElement <= "z") {
-    } //dann verdopple es
-    result.push(currentElement + currentElement)
+      // Kleinbuchstaben verdoppeln
+      result.push(currentElement + currentElement)
+    } else {
+      // Alle anderen Zeichen unverändert hinzufügen
+      result.push(currentElement)
+    }
   }
 
+  // Ergebnis zurückgeben
   return result.join("")
 }
+
 linkupExerciseHandler("[data-click=aufgabe19]", aufgabe19)
 
 export function aufgabe20(args) {
   const input = args
-  const result = []
 
   for (let i = 0; i < input.length; i++) {
-    //wenn du ein Punkt findest
     const currentElement = input[i]
+
+    // Prüfen, ob das aktuelle Zeichen ein Punkt ist
     if (currentElement === ".") {
-      //dann teste ob du ein Lehrschlag dahinter findest
-      const nextElement = input[i]
-      if (nextElement === " ") {
-        //dann gebe ich true zurueck
-      } else {
-        //wenn nicht gebe false zurueck
+      const nextElement = input[i + 1]
+
+      // Prüfen, ob danach ein Leerzeichen kommt
+      if (nextElement !== " ") {
         return false
       }
     }
   }
+
+  // Wenn alle Punkte korrekt gefolgt werden, zurückgeben
   return true
 }
+
 linkupExerciseHandler("[data-click=aufgabe20]", aufgabe20)
 
-export function aufgabe21(args) {
-  const input = args
-  const result = []
-
-  for (let i = 0; i < input.length; i++) {
-    //kehre die ganze Eingabe um.
-    const currentElement = input[i]
-    result.push(currentElement)
-  }
-  return result.reverse().join("")
-}
-
-linkupExerciseHandler("[data-click=aufgabe21]", aufgabe21)
-
 export function aufgabe22(args) {
-  const input = args // Die Eingabe speichern
-  let result = [] // Ein Array für das Ergebnis
+  const input = args
+  let result = []
+  let kFound = false
 
-  // Durch die Eingabe iterieren
+  // Durchlaufe die Eingabezeichenkette
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
 
-    // Wenn das aktuelle Zeichen ein 'k' ist, breche die Schleife ab
-    if (currentElement === "k") {
-      result.push(currentElement) // 'k' bleibt unverändert
-      break
+    if (!kFound) {
+      if (currentElement === "k") {
+        // Wenn das erste 'k' gefunden wird, füge es hinzu
+        kFound = true
+        result.push(currentElement)
+      } else {
+        // Ersetze alle Zeichen vor dem 'k' mit '_'
+        result.push("_")
+      }
     } else {
-      result.push("_") // Alle Zeichen vor dem ersten 'k' werden durch '_' ersetzt
+      // Alle Zeichen nach dem ersten 'k' unverändert hinzufügen
+      result.push(currentElement)
     }
   }
-
-  // Füge den Rest der Eingabe nach dem ersten 'k' zum Ergebnis hinzu
-  result.push(input.slice(result.length).join(""))
 
   // Gib das Ergebnis zurück
   return result.join("")
 }
 
-// Die Funktion mit dem Klick-Handler verbinden
 linkupExerciseHandler("[data-click=aufgabe22]", aufgabe22)
 
 export function aufgabe24(args) {
@@ -494,22 +492,20 @@ linkupExerciseHandler("[data-click=aufgabe24]", aufgabe24)
 
 export function aufgabe27(args) {
   const input = args
-  const result = []
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    //Wir benutzen den sogenannten ASCII-Wert.
-    const ascii = currentElement.charCodeAt(0)
 
-    if (ascii >= 48 && ascii <= 57) {
-      //Man gibt hier den ASCII-Wert von zahlen ein, damti sie erkennt werden zum dann true zu sein.
-      return true
-      // hier wird eben eine Zahl als true gelten
-    } else {
-      return false
+    // ASCII-Wert prüfen, ob das Zeichen eine Zahl ist (0-9)
+    const ascii = currentElement.charCodeAt(0)
+    if (ascii < 48 || ascii > 57) {
+      return false // Wenn ein Nicht-Zahlen-Zeichen gefunden wird
     }
   }
+
+  return true // Alle Zeichen sind Zahlen
 }
+
 linkupExerciseHandler("[data-click=aufgabe27]", aufgabe27)
 
 export function karlosso(args) {
