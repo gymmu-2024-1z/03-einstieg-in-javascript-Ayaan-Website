@@ -69,27 +69,22 @@ export function aufgabe02(args) {
 linkupExerciseHandler("[data-click=aufgabe02]", aufgabe02)
 
 export function aufgabe03(args) {
-  //wir speichern den Wert von args in der Variable "input" ein
-  const input = args
-
-  //wir machen hier die leere Liste
-  const result = []
-
-  //wir machen hier die Schlaufe
+  // Wir zählen, wie oft das Zeichen "e" vorkommt
   let count = 0
-  for (let i = 0; i < input.length; i++) {
-    //jetzt wird das zeichen an der stelle "i" gespeichert fürs weniger schlaufen erstellen
-    const currentElement = input[i]
 
-    //wir zeigen das input der funktion an
-    if (currentElement === "e") {
-      //Die funktion wird eingesetzt bzw eingetippt und gezählt
+  // Wir gehen alle Zeichen in der Eingabe durch
+  for (let i = 0; i < args.length; i++) {
+    // Wenn das aktuelle Zeichen "e" ist, erhöhen wir den Zähler
+    if (args[i] === "e") {
       count = count + 1
     }
   }
+
+  // Am Ende geben wir die Anzahl zurück
   return count
-  //Und noch das Resultat ausgeben
 }
+
+// Die Funktion mit dem Klick-Handler verbinden
 linkupExerciseHandler("[data-click=aufgabe03]", aufgabe03)
 
 export function aufgabe05(args) {
@@ -125,110 +120,102 @@ export function aufgabe05(args) {
 linkupExerciseHandler("[data-click=aufgabe05]", aufgabe05)
 
 export function aufgabe06(args) {
-  //wir speichern den Wert von args in der Variable "input" ein
-
+  // Wir speichern die Eingabe in einer Variable
   const input = args
-  //wir machen die leere Liste
 
-  const result = []
-  //Jetzt kommt die Schlaufe hier hin
-
+  // Variable, die sagt, ob ein Sonderzeichen gefunden wurde
   let istSonderzeichen = false
-  //Wir zeigen das input der funktion an, wenn es ein Sonderzeichen erkennt
 
+  // Wir gehen die Eingabe durch
   for (let i = 0; i < input.length; i++) {
-    //das Zeichen an der Stelle "i" wird gespeichert für das wir nachher sehen
+    // Das aktuelle Zeichen wird gespeichert
+    const aktuellesZeichen = input[i]
 
-    const currentElement = input[i]
-    //wir zeigen das input der funktion an
+    // Wir wandeln das Zeichen einmal in Großbuchstaben und einmal in Kleinbuchstaben um
+    const grossbuchstabe = aktuellesZeichen.toUpperCase()
+    const kleinbuchstabe = aktuellesZeichen.toLowerCase()
 
-    const upperCaseLetter = currentElement.toUpperCase()
-    //Jetzt bestimmen wir wann es die Zeichen als Sonderzeichen erkennt.
-
-    const lowerCase = currentElement.toUpperCase()
-    //Hier soll es die Buchstaben erkennt werden wenn sind etc
-
-    if (lowerCase === upperCaseLetter) {
-      //Jetzt zeigen das input der funktion an
-
+    // Wenn das Zeichen gleich in Groß- und Kleinbuchstaben ist, ist es ein Sonderzeichen
+    if (
+      aktuellesZeichen === grossbuchstabe &&
+      aktuellesZeichen === kleinbuchstabe
+    ) {
       istSonderzeichen = true
-      //Das Resultat wird ausgegeben, dass wenn es ein Sonderzeichen erkennt, es richtig ist.
+      break // Wir können die Schleife abbrechen, wenn ein Sonderzeichen gefunden wurde
     }
   }
+
+  // Das Ergebnis zurückgeben
   return istSonderzeichen
-  //Hier wird noch das Resultat ausgeben
 }
+
+// Die Funktion mit dem Klick-Handler verbinden
 linkupExerciseHandler("[data-click=aufgabe06]", aufgabe06)
 
 export function aufgabe07(args) {
-  //wir speichern den Wert von args in der Variable "input" ein
-
+  // Wir speichern die Eingabe in einer Variable
   const input = args
-  //Wir erstellen die leere Liste
-  const result = []
-  //Jetzt kommt die Schlaufe hier hin
 
-  let istund = false
-  //Das Input der Funktion wird gezeigt, das "und" erkennt werden soll.
+  // Variable, die sagt, ob das Wort "und" gefunden wurde
+  let istUnd = false
 
+  // Wir gehen die Eingabe durch
   for (let i = 0; i < input.length; i++) {
-    //Wir zeigen das input der funktion an, das wir machen wollen
+    // Das aktuelle Zeichen wird gespeichert
+    const aktuellesZeichen = input[i]
 
-    const currentElement = input[i]
-    //Hier wird das Zeichen an der Stelle "i" gespeichert
+    // Prüfen, ob das aktuelle Zeichen ein "u" oder "U" ist
+    if (aktuellesZeichen === "u" || aktuellesZeichen === "U") {
+      // Das nächste Zeichen speichern
+      const naechstesZeichen = input[i + 1]
 
-    if (currentElement === "u" || currentElement === "U") {
-      //die einzelnen Buchstaben werden erkennt, hier jetzt zuerst "u"
+      // Prüfen, ob das nächste Zeichen ein "n" ist
+      if (naechstesZeichen === "n") {
+        // Das letzte Zeichen speichern
+        const letztesZeichen = input[i + 2]
 
-      const nextElement = input[i + 1]
-      //Wir fügen noch ein Input dazu als "nextElement" also "i + 1"
-
-      if (nextElement === "n") {
-        //das nächste Element wird erkennt als "n" angegeben
-
-        const lastElement = input[i + 2]
-        //Wir fügen nochmals einen input hinzu als letztes Element der Funktion damit das Wort "und" erkennt wird
-
-        if (lastElement === "d") {
-          //Das Input als "lastElement" (letztes Element) ist der Buchstabe "d".
-
-          istund = true
-          //Die vollständige Funktion wird als Korrekt abgeschlossen.
+        // Prüfen, ob das letzte Zeichen ein "d" ist
+        if (letztesZeichen === "d") {
+          istUnd = true
+          break // Wenn "und" gefunden wurde, können wir abbrechen
         }
       }
     }
   }
+
+  // Ergebnis zurückgeben
+  return istUnd
 }
+
+// Die Funktion mit dem Klick-Handler verbinden
 linkupExerciseHandler("[data-click=aufgabe07]", aufgabe07)
 
 export function aufgabe08(args) {
-  //wir speichern den Wert von args in der Variable "input" ein.
-
+  // Wir speichern die Eingabe in einer Variable
   const input = args
-  //Die leere Liste wird nun erstellt.
 
+  // Leere Liste, um das Ergebnis zu speichern
   const result = []
-  //Die Schlaufe wird erstellt um die Funktion angeben zu können.
 
+  // Wir gehen die Eingabe durch
   for (let i = 0; i < input.length; i++) {
-    //Das Input wird erstellt
+    // Das aktuelle Zeichen wird gespeichert
+    const aktuellesZeichen = input[i]
 
-    const currentElement = input[i]
-    //Hier wird das Zeichen an der Stelle "i" gespeichert
-
-    if (currentElement === "e" || input === "E") {
-      //es soll erkennen dass wenn es ein "e" entdeckt, soll es eine "3" draus machen
-      return i
-      //Als "i" wird die Funktion ersetzt mit den Elementen in der Schlaufe.
+    // Wenn das Zeichen ein "e" oder "E" ist, ersetzen wir es durch "3"
+    if (aktuellesZeichen === "e" || aktuellesZeichen === "E") {
+      result.push("3")
     } else {
-      return -1
-      //Wir geben als Resultat -1 zurück.
+      // Wenn es kein "e" oder "E" ist, fügen wir das Originalzeichen hinzu
+      result.push(aktuellesZeichen)
     }
   }
 
-  //Das resultat wird noch ausgegeben.
+  // Wir geben das Ergebnis als zusammengefügten String zurück
   return result.join("")
 }
+
+// Die Funktion mit dem Klick-Handler verbinden
 linkupExerciseHandler("[data-click=aufgabe08]", aufgabe08)
 
 export function aufgabe09(args) {
@@ -240,11 +227,15 @@ export function aufgabe09(args) {
   const result = []
   //Die Funktion in der Schlaufe wird gemacht.
 
+  let count = 0
+
   for (let i = 0; i < input.length; i++) {
     //Wir zeigen das jetzt Input der Funktion an
 
     const currentElement = input[i]
     //Hier wird das Zeichen an der Stelle "i" gespeichert
+
+    count = count + 1
 
     if (input.length === 6) {
       // Wir sagen das es testen soll ob eine eingabe genau 6 zeichen lang ist
@@ -253,6 +244,7 @@ export function aufgabe09(args) {
       //Die Funktion wird als korrekt abgeschlossen, dass die Eingabe genau 6 Zeichen lang ist udn dies erkennt werden soll.
     } else {
       return false
+      //Wenn nicht, dann geben wir false zurück.
     }
   }
 }
@@ -277,18 +269,22 @@ export function aufgabe10(args) {
 linkupExerciseHandler("[data-click=aufgabe10]", aufgabe10)
 
 export function aufgabe12(args) {
+  // Wir speichern die Eingabe in einer Variable
   const input = args
-  const result = []
 
+  // Wir gehen die Eingabe durch
   for (let i = 0; i < input.length; i++) {
-    // Suche die Position des ersten es in einem Text.
+    // Suche die Position des ersten "e" oder "E" im Text
     if (input[i] === "e" || input[i] === "E") {
-      return i
-    } else {
-      return -1
+      return i // Gib die Position des ersten "e" oder "E" zurück
     }
   }
+
+  // Wenn kein "e" oder "E" gefunden wurde, geben wir -1 zurück
+  return -1
 }
+
+// Die Funktion mit dem Klick-Handler verbinden
 linkupExerciseHandler("[data-click=aufgabe12]", aufgabe12)
 
 export function aufgabe13(args) {
