@@ -158,4 +158,16 @@ Halbieren Sie das Wort "Hausaufgaben" in der Eingabe in jeweils zwei Hälften mi
 jeweils gleich viel Buchstaben, also füge eine Leerstelle in der Hälfte des
 Wortes ein.
 
-## Aufgabe
+## Aufgabe Vanille Cupcake
+
+Milla backt Vanille Cupcakes. Nach dem vielen backen hat Milla einen
+Schwindelanfall und ihr passieren Fehler beim beschriften. Schreibe eine
+Funktion, die den Namen Vanille Cupcake verdoppelt, sodass das Wort zweimal
+hintereinander erscheint. Dann wird das jeweilige verdoppelte Wort rückwärts
+geschrieben. Analysiere Millas Chaos.
+
+## Aufgabe Mangos
+
+Jeremy isst Mangos zum snacken während er das Alphabet lernt. Als Übung soll er
+Wörter dem Alphabet nach sortieren. Hilf Jeremy das Wort "Mangos" dem Alphabet
+nach zu ordnen.

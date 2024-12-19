@@ -471,6 +471,27 @@ export function aufgabe22(args) {
 // Die Funktion mit dem Klick-Handler verbinden
 linkupExerciseHandler("[data-click=aufgabe22]", aufgabe22)
 
+export function aufgabe24(args) {
+  const input = args
+
+  // Wenn die Eingabe weniger als 2 Zeichen hat, bleibt sie unverändert
+  if (input.length < 2) {
+    return input
+  }
+
+  // Erster und letzter Buchstabe tauschen
+  const firstChar = input[0]
+  const lastChar = input[input.length - 1]
+
+  // Das Ergebnis zusammensetzen: letzter Buchstabe + mittlere Zeichen + erster Buchstabe
+  const result = lastChar + input.slice(1, input.length - 1) + firstChar
+
+  return result
+}
+
+// Die Funktion mit dem Klick-Handler verbinden
+linkupExerciseHandler("[data-click=aufgabe24]", aufgabe24)
+
 export function aufgabe27(args) {
   const input = args
   const result = []
@@ -514,3 +535,35 @@ export function karlosso(args) {
 }
 
 linkupExerciseHandler("[data-click=karlosso]", karlosso)
+
+export function vanilleCupcake(args) {
+  // Zerlege die Eingabe in einzelne Wörter
+  const words = args.split(" ")
+
+  // Verdopple jedes Wort und mache das zweite Wort rückwärts
+  const doubledWords = words.map((word, index) => {
+    if (index === 0) {
+      return word + " " + word // Erstes Wort normal verdoppeln
+    } else {
+      return word + " " + word.split("").reverse().join("") // Zweites Wort rückwärts
+    }
+  })
+
+  // Gib das verdoppelte Ergebnis als String zurück
+  return doubledWords.join(" ")
+}
+
+linkupExerciseHandler("[data-click=vanilleCupcake]", vanilleCupcake)
+
+export function mangos(args) {
+  // Zerlege das Wort in einzelne Buchstaben
+  const letters = args.split("")
+
+  // Sortiere die Buchstaben alphabetisch
+  const sortedLetters = letters.sort((a, b) => a.localeCompare(b))
+
+  // Füge die sortierten Buchstaben wieder zu einem Wort zusammen
+  return sortedLetters.join("")
+}
+
+linkupExerciseHandler("[data-click=mangos]", mangos)
