@@ -288,61 +288,75 @@ export function aufgabe12(args) {
 linkupExerciseHandler("[data-click=aufgabe12]", aufgabe12)
 
 export function aufgabe13(args) {
+  // Wir speichern die Eingabe in einer Variable
   const input = args
-  const result = []
 
+  // Variable, um die Position des letzten "e" oder "E" zu speichern
+  let letztePosition = -1
+
+  // Wir gehen die Eingabe durch
   for (let i = 0; i < input.length; i++) {
-    // Suche die Position des letzten es in einem Text.
-    if (input[i] === "e") {
-      return i
-    } else {
-      return -1
-    }
+    // Wenn das aktuelle Zeichen ein "e" oder "E" ist, speichern wir die Position
     if (input[i] === "e" || input[i] === "E") {
-      return i
-    } else {
-      return -1
+      letztePosition = i
     }
   }
+
+  // Die Position des letzten "e" oder "-1", falls keines gefunden wurde, zurückgeben
+  return letztePosition
 }
+
+// Die Funktion mit dem Klick-Handler verbinden
 linkupExerciseHandler("[data-click=aufgabe13]", aufgabe13)
 
 export function aufgabe14(args) {
+  // Startwerte für die Position und den Zähler
   let pos = -1
   let eCount = 0
 
+  // Wir durchlaufen die Eingabe
   for (let i = 0; i < args.length; i++) {
-    const currentElement = input[i]
+    const aktuellesZeichen = args[i]
 
-    // Wenn du ein e siehst dann zähle eins hoch.
-    if (currentElement === "e") {
-      eCount = eCount + 1
-    }
+    // Wenn das aktuelle Zeichen ein "e" oder "E" ist, zähle eins hoch
+    if (aktuellesZeichen === "e" || aktuellesZeichen === "E") {
+      eCount++
 
-    // Wenn eCount genau gleich 3 ist, dann speichere die Position.
-    if (eCount === 3) {
-      pos = i
+      // Wenn der Zähler genau 3 erreicht, speichern wir die Position
+      if (eCount === 3) {
+        pos = i
+        break // Schleife beenden, da wir die Position gefunden haben
+      }
     }
   }
 
+  // Die Position des dritten "e" (oder -1, falls es kein drittes "e" gibt) zurückgeben
   return pos
 }
+
+// Die Funktion mit dem Klick-Handler verbinden
 linkupExerciseHandler("[data-click=aufgabe14]", aufgabe14)
 
 export function aufgabe15(args) {
+  // Startwert für die Position
   let pos = -1
-  let eCount = 0
 
+  // Wir durchlaufen die Eingabe
   for (let i = 0; i < args.length; i++) {
-    const currentElement = input[i]
+    const aktuellesZeichen = args[i]
 
-    // Lese die Eingabe nur bis zum ersten Leerzeichen ein.
-    if (currentElement === " ") {
-      break // Die Schleife wird beendet.
+    // Wenn ein Leerzeichen gefunden wird, speichern wir die Position
+    if (aktuellesZeichen === " ") {
+      pos = i
+      break // Die Schleife wird beendet
     }
   }
+
+  // Die Position des ersten Leerzeichens (oder -1, falls keines gefunden wurde) zurückgeben
   return pos
 }
+
+// Die Funktion mit dem Klick-Handler verbinden
 linkupExerciseHandler("[data-click=aufgabe15]", aufgabe15)
 
 export function aufgabe16(args) {
