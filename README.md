@@ -1,3 +1,5 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/SYYUWTQg)
+
 # Einstieg ins Programmieren mit Javascript
 
 Dieses Projekt bietet viele Aufgaben mit automatischen Tests, bei denen Sie das
@@ -148,3 +150,24 @@ Testen sie, ob eine Eingabe eine Zahl ist.
 
 Testen Sie, ob in der Eingabe 2 Zahlen von einem Leerzeichen getrennt sind.
 Falls ja geben Sie die Summe als Ausgabe aus; sonst Fehlermeldung.
+
+## Aufgabe Karlosso
+
+Karlosso macht Hausaufgaben. Sein Hund isst die Hälfte des Blattes auf.
+Halbieren Sie das Wort "Hausaufgaben" in der Eingabe in jeweils zwei Hälften mit
+jeweils gleich viel Buchstaben, also füge eine Leerstelle in der Hälfte des
+Wortes ein.
+
+## Aufgabe Vanille Cupcake
+
+Milla backt Vanille Cupcakes. Nach dem vielen backen hat Milla einen
+Schwindelanfall und ihr passieren Fehler beim beschriften. Schreibe eine
+Funktion, die den Namen Vanille Cupcake verdoppelt, sodass das Wort zweimal
+hintereinander erscheint. Dann wird das jeweilige verdoppelte Wort rückwärts
+geschrieben. Analysiere Millas Chaos.
+
+## Aufgabe Mangos
+
+Jeremy isst Mangos zum snacken während er das Alphabet lernt. Als Übung soll er
+Wörter dem Alphabet nach sortieren. Hilf Jeremy das Wort "Mangos" dem Alphabet
+nach zu ordnen.
