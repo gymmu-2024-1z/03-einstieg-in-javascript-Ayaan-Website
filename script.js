@@ -110,7 +110,29 @@ export function aufgabe04(args) {
   }
   // Zum Schluss sollten wir noch mehrere Leerzeichen hintereinander haben, welche noch filtern müssen.
   const result2 = []
+
+  for (let i = 0; i < result.length; i++) {
+    const currentElement = result[i]
+    const nextElement = result[i + 1]
+
+    if (currentElement === " " && nextElement === " ") {
+      //hier stehen zwei Lehrzeichen hintereinander, dabei beachten wir das erste einfach nicht
+    } else {
+      result2.push(currentElement)
+    } //nun können wir die Leerzeichen zählen
+    let count = 0
+    for (let i = 0; i < result2.length; i++) {
+      const currentElement = result2[i]
+      if (currentElement === " ") {
+        count++
+      }
+    }
+    // Da es ein Wort mit mehr als Leerzeichen gibt, geben wir das Leerzeichen +1 zurück
+    return count + 1
+  }
 }
+
+linkupExerciseHandler("[data-click=aufgabe04]", aufgabe04)
 
 export function aufgabe05(args) {
   //wir speichern den Wert von args in der Variable "input" ein
@@ -417,9 +439,47 @@ export function aufgabe16(args) {
 // Die Funktion mit dem Klick-Handler verbinden
 linkupExerciseHandler("[data-click=aufgabe16]", aufgabe16)
 
-export function aufgabe17(args) {}
+export function aufgabe17(args) {
+  const input = args
+  const totalList = []
+  const currentList = []
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    // Wenn wir nun auf ein Leerzeichen drücken, schreiben wir alles was wir bis jetzt haben, in die totalList.
 
-export function aufgabe19(args) {
+    if (currentElement === " ") {
+      totalList.push(currentList.join(""))
+      currentList.length = 0
+    } else {
+      currentList.push(currentElement)
+    }
+  }
+  //Wir schreiben alles was wir noch bis zu dem Ende gelesen haben, in die Liste
+  totalList.push(currentList.join(""))
+  return totalList
+}
+linkupExerciseHandler("[data-click=aufgabe17]", aufgabe17)
+
+export function aufgabe18(args) {
+  const input = args
+  // Für diese Aufgabe benötigen wir Aufgabe 17 damit wir eine Liste bekommen.
+  const nameAge = aufgabe17(input)
+  // Hier wird unsere Aufgabenliste generiert.
+  const result = []
+  //Hier werden ganze Wörter in die Liste geschrieben, das ist auch möglich.
+  result.push("Sie heissen")
+  // Die Liste wird so zusammengesetzt, dass der Name und das Alter an der richtigen Stelle eingefügt werden.
+  result.push(nameAge[0])
+  result.push("und sind")
+  result.push(nameAge[1])
+  result.push("Jahre alt.")
+  //das Resultat wird immer als Text zurück gegeben
+  return.result.join(".")
+}
+
+linkupExerciseHandler("[data-click=aufgabe18]", aufgabe18)
+
+} export function aufgabe19(args) {
   const input = args
   const result = []
 
