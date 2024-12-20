@@ -697,22 +697,22 @@ export function selectionSort(arr) {
 }
 
 // Beispiel für das Testen des Selection Sort
-let unsortedArraySelection = [64, 25, 12, 22, 11] // Unsortierte Array für Selection Sort
+let unsortedArraySelection = [64, 25, 12, 22, 11] // Unsortierte array für Selectionn Sort
 let sortedArraySelection = selectionSort(unsortedArraySelection) // Selection sort anwenden
-console.log("Sortiertes Array (Selection Sort):", sortedArraySelection) // Sortiertes Array anzeigen
+console.log("Sortiertes Array (Selection Sort):", sortedArraySelection) // sortiertes Array anzeigen.
 
 linkupExerciseHandler("[data-click=selectionSort]", selectionSort)
 
 export function insertionSort(arr) {
-  // Wir durchlaufen das Array ab dem zweiten Element (Index 1)
+  // Wir durchlaufen das Array ab dem zweiten Element also halt Index 1.
   for (let i = 1; i < arr.length; i++) {
-    let current = arr[i] // Das aktuele Element, das wir einfügen möchten
+    let current = arr[i] // das aktuele Element, das wir einfügen möchten
     let j = i - 1 // Der Index des Elements vor dem aktuellen Element
 
     // Verschiebe alle Elemente, die größer als das aktuelle Element sind, um eine Position nach rechts
     while (j >= 0 && arr[j] > current) {
       arr[j + 1] = arr[j] // Verschiebe das Elemment um eine Position nach rechts
-      j-- // Gehe zum vorhrerigen Element
+      j-- // gehe zum vorhrerigen Element
     }
 
     // Setze das aktuelle Element an die richtige Position
