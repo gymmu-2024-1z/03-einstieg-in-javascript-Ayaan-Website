@@ -474,12 +474,12 @@ export function aufgabe18(args) {
   result.push(nameAge[1])
   result.push("Jahre alt.")
   //das Resultat wird immer als Text zurück gegeben
-  return.result.join(".")
+  return result.join(".")
 }
 
 linkupExerciseHandler("[data-click=aufgabe18]", aufgabe18)
 
-} export function aufgabe19(args) {
+export function aufgabe19(args) {
   const input = args
   const result = []
 
@@ -672,3 +672,68 @@ linkupExerciseHandler(
   "[data-click=bubblesortalgorithmus]",
   bubblesortalgorithmus,
 )
+
+export function selectionSort(arr) {
+  //Wir durchlaufen zuerst jedes Element des Arrays(ist eine datenstruktur).
+  for (let i = 0; i < arr.length - 1; i++) {
+    //Wir nehmen jetzt mal an dass das aktuelle Element das kleinste Element ist.
+    let minIndex = i
+
+    //Jetzt suchen wir das kleinste Element im rest des Arrays
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[j] < arr[minIndex]) {
+        minIndex = j
+      }
+    }
+
+    //Wir vertauschen das kleinste Element mit dem aktuellen Element
+    if (minIndex !== i) {
+      let temp = arr[i]
+      arr[i] = arr[minIndex]
+      arr[minIndex] = temp
+    }
+  }
+  return arr
+  // Wir geben die sortierte Array zurück.
+}
+
+//Jetzt durchlaufen wir einen test der Funktion
+let unsortedArray = [64, 25, 12, 22, 11]
+let sortedArray = selectionSort(unsortedArray)
+
+//Zum Schluss geben wir die sortierte Array aus (das sollte [11, 12, 22, 25, 64] sein)
+console.log(sortedArray)
+
+linkupExerciseHandler("[data-click=selectionSort]", selectionSort)
+
+export function insertionSort(arr) {
+  // Wir durchlaufen das Array ab dem zweiten Element (Index 1)
+  for (let i = 1; i < arr.length; i++) {
+    let current = arr[i]
+    // Das aktuelle Element, das wir einfügen möchten
+
+    let j = i - 1
+    // Der Index des Elements vor dem aktuellen Element
+
+    // Verschiebe alle Elemente, die größer als das aktuelle Element sind, um eine Position nach rechts
+    while (j >= 0 && arr[j] > current) {
+      arr[j + 1] = arr[j] // Verschiebe das Element um eine Position nach rechts
+      j-- // Gehe zum vorherigen ellement
+    }
+
+    // Setze das aktuelle Element an die richtige Position
+    arr[j + 1] = current
+  }
+
+  // Wir geben das sortierte Array zurück
+  return arr
+}
+
+const unsortedArray = [5, 3, 8, 4, 2] //Wir testen jetzt das Insertion Sort mit einer Array.
+
+console.log("Unsortiertes Array:", insortedArray)
+
+const sortedArray = insertionSort(sortedArray) // Führe den Insertion Sort auf dem Array aus
+console.log("Sortiertes Array:", sortedArray) // Zeige das sortierte Array an.
+
+linkupExerciseHandler("[data-click=insertionSort]", insertionSort)
