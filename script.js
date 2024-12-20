@@ -674,66 +674,59 @@ linkupExerciseHandler(
 )
 
 export function selectionSort(arr) {
-  //Wir durchlaufen zuerst jedes Element des Arrays(ist eine datenstruktur).
+  // Wir durchlaufen zuerst jedes Ellement des Arrays (eine Datenstruktur)
   for (let i = 0; i < arr.length - 1; i++) {
-    //Wir nehmen jetzt mal an dass das aktuelle Element das kleinste Element ist.
+    // Wir nehmen jetzt mal an, dass das aktuelle Element das kleinste Element ist
     let minIndex = i
 
-    //Jetzt suchen wir das kleinste Element im rest des Arrays
+    // Jetzt suchen wir das kleinste Element im Rest des Arrays
     for (let j = i + 1; j < arr.length; j++) {
       if (arr[j] < arr[minIndex]) {
         minIndex = j
       }
     }
 
-    //Wir vertauschen das kleinste Element mit dem aktuellen Element
+    // Wir vertauschen das kleinste Elementt mit dem aktuellen Element
     if (minIndex !== i) {
       let temp = arr[i]
       arr[i] = arr[minIndex]
       arr[minIndex] = temp
     }
   }
-  return arr
-  // Wir geben die sortierte Array zurück.
+  return arr // Wir geben die sortierte Array zurück
 }
 
-//Jetzt durchlaufen wir einen test der Funktion
-let unsortedArray = [64, 25, 12, 22, 11]
-let sortedArray = selectionSort(unsortedArray)
-
-//Zum Schluss geben wir die sortierte Array aus (das sollte [11, 12, 22, 25, 64] sein)
-console.log(sortedArray)
+// Beispiel für das Testen des Selection Sort
+let unsortedArraySelection = [64, 25, 12, 22, 11] // Unsortierte Array für Selection Sort
+let sortedArraySelection = selectionSort(unsortedArraySelection) // Selection sort anwenden
+console.log("Sortiertes Array (Selection Sort):", sortedArraySelection) // Sortiertes Array anzeigen
 
 linkupExerciseHandler("[data-click=selectionSort]", selectionSort)
 
 export function insertionSort(arr) {
   // Wir durchlaufen das Array ab dem zweiten Element (Index 1)
   for (let i = 1; i < arr.length; i++) {
-    let current = arr[i]
-    // Das aktuelle Element, das wir einfügen möchten
-
-    let j = i - 1
-    // Der Index des Elements vor dem aktuellen Element
+    let current = arr[i] // Das aktuele Element, das wir einfügen möchten
+    let j = i - 1 // Der Index des Elements vor dem aktuellen Element
 
     // Verschiebe alle Elemente, die größer als das aktuelle Element sind, um eine Position nach rechts
     while (j >= 0 && arr[j] > current) {
-      arr[j + 1] = arr[j] // Verschiebe das Element um eine Position nach rechts
-      j-- // Gehe zum vorherigen ellement
+      arr[j + 1] = arr[j] // Verschiebe das Elemment um eine Position nach rechts
+      j-- // Gehe zum vorhrerigen Element
     }
 
     // Setze das aktuelle Element an die richtige Position
     arr[j + 1] = current
   }
 
-  // Wir geben das sortierte Array zurück
-  return arr
+  return arr // Wir geben das sortierte Array zurück
 }
 
-const unsortedArray = [5, 3, 8, 4, 2] //Wir testen jetzt das Insertion Sort mit einer Array.
+// Beispiel für das Testen des Inserttion Sort
+let unsortedArrayInsertion = [5, 3, 8, 4, 2] // Unsortiertes Array für Insertion Sort
+console.log("Unsortiertes Array (Insertion Sort):", unsortedArrayInsertion) // Unsortiertes Array anzeigen
 
-console.log("Unsortiertes Array:", insortedArray)
-
-const sortedArray = insertionSort(sortedArray) // Führe den Insertion Sort auf dem Array aus
-console.log("Sortiertes Array:", sortedArray) // Zeige das sortierte Array an.
+let sortedArrayInsertion = insertionSort(unsortedArrayInsertion) // insertion Sort anwenden
+console.log("Sortiertes Array (Insertion Sort):", sortedArrayInsertion) // Sortiertes array anzeigen
 
 linkupExerciseHandler("[data-click=insertionSort]", insertionSort)
