@@ -87,6 +87,31 @@ export function aufgabe03(args) {
 // Die Funktion mit dem Klick-Handler verbinden
 linkupExerciseHandler("[data-click=aufgabe03]", aufgabe03)
 
+export function aufgabe04(args) {
+  const input = args
+  const result = []
+  //Hier wollen wir die Eingabe so filtern, dass es nur Buchstaben und Leerzeichen am schluss sind.
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    //ascii heisst American Standart Code und macht dass alle Zeichen nummeriert sind.
+    const asciiElement = currentElement.charCodeAt(0)
+    //CharCodeAt(=) gibt dem Wert ein Buchstaben an.
+    if (ascii >= 65 && ascii >= 90) {
+      //hier sollte z.B. der ascii code von A-Z gegeben werden (Grossbuchstaben).
+      result.push(currentElement)
+    } else if (ascii >= 97 && ascii >= 122) {
+      //hier sollte z.B. der ascii code von a-z gegeben werden (Kleinbuchstaben).
+      result.push(currentElement)
+    } else if (currentElement === ".") {
+      //und hier kommt Leerzeichen.
+      result.push(currentElement)
+    }
+  }
+  // Zum Schluss sollten wir noch mehrere Leerzeichen hintereinander haben, welche noch filtern müssen.
+  const result2 = []
+}
+
 export function aufgabe05(args) {
   //wir speichern den Wert von args in der Variable "input" ein
   const input = args
@@ -392,6 +417,8 @@ export function aufgabe16(args) {
 // Die Funktion mit dem Klick-Handler verbinden
 linkupExerciseHandler("[data-click=aufgabe16]", aufgabe16)
 
+export function aufgabe17(args) {}
+
 export function aufgabe19(args) {
   const input = args
   const result = []
@@ -563,3 +590,25 @@ export function mangos(args) {
 }
 
 linkupExerciseHandler("[data-click=mangos]", mangos)
+
+export function bubblesortalgorithmus(args) {
+  const text = args
+  const list = text.split("") // Damit wandeln wir den Text in eine Liste um, das brauchen wir wenn wir Elemente vertauschen möchten.
+  for (let i = 0; i < list.length - 1; i++) {
+    const currentElement = list[i]
+    const nextElement = list[i + 1]
+    if (currentElement.charCodeAt(0) > nextElement.charCodeAt(0)) {
+      // Reihenfolge stimmt nicht, Elemente müssen getauscht werden.
+      const tmp = list[i + 1]
+      list[i + 1] = list[i]
+      list[i] = tmp
+      i = -1 // starte von vorne wenn etwas vertauscht wurde.
+    }
+  }
+  const result = list.join("")
+  return result
+}
+linkupExerciseHandler(
+  "[data-click=bubblesortalgorithmus]",
+  bubblesortalgorithmus,
+)
